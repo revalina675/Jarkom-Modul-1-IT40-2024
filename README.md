@@ -1,4 +1,4 @@
-# WRITE UP PRAKTIKUM MODUL 01 ETHICAL HACKING
+![image](https://github.com/user-attachments/assets/ca51f12d-5f85-4779-b43d-649fd3c9642f)# WRITE UP PRAKTIKUM MODUL 01 ETHICAL HACKING
 ## Kelompok IT40
 ### Anggota Kelompok :
 |             Nama              |     NRP    |
@@ -31,5 +31,22 @@ Setelah dimasukkan, muncul flagnya
 flagnya adalah, JarkomIT{8uK4n_S4n1ty_b1a5A_cEuEzhKl6Gjd9qxpQizw3AAEOSu5PujqyAsJVJbnudESvOEhPp4mXIKK}
 
 ### Pegawai Negeri Sebelah
+Kita masuk ke nc yang telah diberikan, dan diberikan pertanya tentang siapa yang memiliki password "nNnM%coQuF"
+Metode mencari saya menggunakan fitur filter yang ada, dengan melihat protokol terbanyak pada packets yang ada, yang paling banyak adalah protokol TCP. Sehingga saya mencoba filter "tcp.stream eq" dengan angka dari 0 - 5 (sesuai yang tersediah pada references search bar nya) dan menemukan data para pns nya pada pengaturan filter tcp.stream eq 1. Setelah itu saya scroll di tiap packetsnya hingga menemukan orang yang memiliki password tersebut. Dan orang tersebut adalah Vero Tampubolon
+![image](https://github.com/user-attachments/assets/811d9816-56c0-4a9d-976c-adaa59b2f963)
+
+Lalu kita diminta untuk memasukkan jabatan dari Taufan Kuswandari, dari data yang ada beliau memiliki jabatan sebagai Analis Kebijakan. Kemudian ditanya list di nama paling atas, yaitu Cici Mustofa. Lalu juga ada pertanyaan password user paling akhir, yaitu Harjasa Suryatmi dengan password "RyxaJPv^yF"
+![image](https://github.com/user-attachments/assets/342ac181-711e-4b88-97b8-d2743d9aa3ac)
+![image](https://github.com/user-attachments/assets/3a2a39fc-7063-4ebb-a34f-c1df4782dea1)
+![image](https://github.com/user-attachments/assets/b727392d-172c-445a-9596-acf5de32ef2a)
+
+Setelah kita masukkan semua, flag telah ditemukan yaitu "flag-mu: JarkomIT{Tum8eN_p45SnYa_Ku4t_B1aS4Nya_kimJpa34YhWNGeYZnikzQzuapL3lFfJXYuOEhf65YYjDOcWAFQo8M4h}"
+![image](https://github.com/user-attachments/assets/5e7d8cc5-68ce-4518-8825-b564d016de2f)
+
+
+
+
+
+
 
 

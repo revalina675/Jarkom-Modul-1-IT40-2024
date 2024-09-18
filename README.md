@@ -96,4 +96,11 @@ Setelah masuk pada port IP yang tersedia, pada terminal muncul DBMS apa yang dig
 Dan munculah flag, yaitu JarkomIT{Gy4tT_M5g_4U_LBuvgaosrMezITmL5dAvR8L535k1woCEvE2mc05OfNGbB8nANxCKsBiD1}
 ![image](https://github.com/user-attachments/assets/513130d1-673c-4bce-b91f-d3e2361ecf11)
 
-### 
+### Gajah Terbang (Attacker Recon)
+
+Setelah memasukkan port IP nc sesuai yang ada pada soal, dan menggunakan file yang sama seperti soal Gajah Terbang yang lalu, kita mendapat pertanyaan di terminal tentang email akun penyerang. Awalnya saya gatau mana yang attacker, lalu saya coba satu-satu dan berhasil di kunto aji. Lalu untuk password penyerangnya saya juga meng-hashing password kunto seperti pada step soal sebelumnya dan menemukan passwordnya adalah "kissme". Lalu ditanya tanggal banned, dan saya memasukkan 2024-06-09 dari info. Lalu ditanyakan tabel apa yang telah diubah penyerang, dan dari info yang didapat yang diubah adalah users dan banned_users. Setelah itu ditanyakan barang apa yang telah dibeli, saya coba langsung 1st try di rokok dan es krim akhirnya berhasil. Lalu ditanyakan total transaksi, saya menjumlahkan harga dari rokok dan es krim pada info data, dan didapat hasilnya adalah 18.000 + 6.500 yaitu 24.500 dan hasilnya benar. 
+
+![image](https://github.com/user-attachments/assets/32d6651f-2dcb-4e4b-93af-a1fb80aaebb9)
+
+Lalu muncullah flag nya yaitu JarkomIT{G4jaH_K0k_t3RbaNG_0DA7g5WyN4KciJaUVVo0ZN2DPYntwWJAyLDA4hWx3F5XVOReTg5FZKt5}
+![image](https://github.com/user-attachments/assets/a9c91386-a1ae-4adb-b2f7-a4e47ed1b428)

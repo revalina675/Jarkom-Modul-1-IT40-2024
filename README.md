@@ -43,6 +43,17 @@ Lalu kita diminta untuk memasukkan jabatan dari Taufan Kuswandari, dari data yan
 Setelah kita masukkan semua, flag telah ditemukan yaitu "flag-mu: JarkomIT{Tum8eN_p45SnYa_Ku4t_B1aS4Nya_kimJpa34YhWNGeYZnikzQzuapL3lFfJXYuOEhf65YYjDOcWAFQo8M4h}"
 ![image](https://github.com/user-attachments/assets/5e7d8cc5-68ce-4518-8825-b564d016de2f)
 
+### FTP Login
+
+Pertama kita masuk pada port nc yang telah disediakan. Lalu saat membuka file di wireshark, terlihat mayoritas packets dengan info tentang login ada di FTP, pada search langsung saja kita tulis ftp untuk memfilter, lalu kita pilih packets yang info nya login succesfull
+![image](https://github.com/user-attachments/assets/26ddd5b0-66b7-44b8-bf9a-cf3473f8fffb)
+
+Pada terminal kita ditanya usn yang berhasil digunakan ftp login, setelah kita analyze terlihat bahwa usn yang sukses untuk login adalah sn34ky. Setelah itu kita juga diminta untuk memasukkan password dari usn tersebut, yaitu sup3rsn1ff3r
+![image](https://github.com/user-attachments/assets/4580b87c-40ae-4fc1-9a7a-d80d40f45851)
+
+Setelah itu kita telah mendapatkan flag nya, yaitu JarkomIT{n0t_s0_s3cur3_ftp_OCPBE5WVpOGa7l4nQFeYfJ1nNL0nyFHu9cZmu59LKXaYnGhny8d9G1N}
+![image](https://github.com/user-attachments/assets/8bc93abd-93d1-40a4-88f4-4e2a76466f4e)
+
 
 
 

@@ -165,3 +165,8 @@ kurangi jumlah displayed dengan 10 (karena 10 dari bawah sukses)
 - Buka file py, copas binernya, masukkan ke decryptor pakai kunci biner NUN yang diubah ke biner, dan langsung decrypt ke text
 ![image](https://github.com/user-attachments/assets/6ab98660-0d1f-40d3-9bb5-ad35c7328a09)
 
+
+### Stegography
+- filter dengan frame contains ".png"
+- Eksekusi dengan reverse.py dan ditemukan message "pahlawan keamanan siber" namun terbalik
+![image](https://github.com/user-attachments/assets/c76a1f04-bf7f-472a-9388-6e4cf59b156d)

@@ -54,7 +54,16 @@ Pada terminal kita ditanya usn yang berhasil digunakan ftp login, setelah kita a
 Setelah itu kita telah mendapatkan flag nya, yaitu JarkomIT{n0t_s0_s3cur3_ftp_OCPBE5WVpOGa7l4nQFeYfJ1nNL0nyFHu9cZmu59LKXaYnGhny8d9G1N}
 ![image](https://github.com/user-attachments/assets/8bc93abd-93d1-40a4-88f4-4e2a76466f4e)
 
+###EZ
 
+Pertama kita masuk ke IP yang telah tersedia pada soal, lalu pada terminal kita diminta untuk memasukkan jawaban dari log tersebut. Awalnya saya gapaham itu maksudnya apa, lalu saya iseng buat anaylze > follow > tcp di packets paling pertama sendiri, karena coba-coba siapa tahu dapet hint, dan akhirnya ternyata dapet. Disitu ada kata yang lumayan sus tulisannya "jawabannya jawaban", saya iseng masukin ternyata bener. Lalu kita ditanyain itu ada di port berapa, bisa kita cek di bagian left bottom section, disana tertera port nya yaitu "1234"
+![image](https://github.com/user-attachments/assets/51d9dc45-b66c-4de5-a085-1f950397b722)
+![image](https://github.com/user-attachments/assets/966d9b9c-9099-4b2b-9038-87c7234d09e0)
+
+Setelah itu munculah flag nya, yaitu JarkomIT{BiAr_aman_Pake_sSh_OQxo9eKh1mEbBEy0lgBnVj5mM3zST4VbIhRbt6fi2zrXqEYwlFkiEZ}
+![image](https://github.com/user-attachments/assets/cf00bd05-6e1e-4ed8-837f-0bf12f93a53b)
+
+### Surprise
 
 
 

@@ -104,3 +104,64 @@ Setelah memasukkan port IP nc sesuai yang ada pada soal, dan menggunakan file ya
 
 Lalu muncullah flag nya yaitu JarkomIT{G4jaH_K0k_t3RbaNG_0DA7g5WyN4KciJaUVVo0ZN2DPYntwWJAyLDA4hWx3F5XVOReTg5FZKt5}
 ![image](https://github.com/user-attachments/assets/a9c91386-a1ae-4adb-b2f7-a4e47ed1b428)
+
+### Illegal Breakthrough
+- Langkah pertama langsung saja follow tcp stream yang paling atas sehingga ditemukan ip server nya.
+![image](https://github.com/user-attachments/assets/d694ad4a-c11b-4275-b50d-9f48812fcabc)
+- Langkah kedua adalah dengan memperhatikan line host pada hal yang sama
+![image](https://github.com/user-attachments/assets/15c9523b-e2ce-4fc3-97f6-467f0811627e)
+- Langkah selanjutnya dengan memperhatikan endpoint /ww1.php pada gambar di langkah pertama pada akhir host
+- jawabannya adalah dengan menyingkat User-Agent menjadi ffuf-v2.1.0-dev
+- Kemudian cari yang memiliki kredensial dengan tidak memiliki keterangan "salah" (cari 1 1 dengan stream 1917)
+![image](https://github.com/user-attachments/assets/a4fb9f9e-5d86-43c9-8676-c07ce526dc13)
+Flag ditemukan!
+![image](https://github.com/user-attachments/assets/bf21d273-1889-48df-83e6-145265f7efac)
+
+
+###Packets Barrage
+- Langsung ditemukan dengan memasukkan ip address yang ada pada source wireshark paling atas
+- Menggunakan filter "http contains "404"" untuk menemukan fail nya berapa kemudian ditambah 1 untuk bagian suksesnya (somehow it works)
+![image](https://github.com/user-attachments/assets/42392916-4809-4bed-97e6-3382338f187c)
+- Kemudian pilih file di wireshark -> export object -> HTTP -> dan slide kepaling bawah hingga menemukan download dan Regev.zip
+![image](https://github.com/user-attachments/assets/539371c0-8ec4-43a6-8bf2-7f9b0057684d)
+Lakukan save dan kemudian extract filenya untuk kemudian menemukan file bernama Albatros.txt
+- Copy isi file Albatros.txt
+![image](https://github.com/user-attachments/assets/8b06a0c8-3eab-4c43-ab59-b3258ac941f6)
+
+
+### Corporate Breach
+- Langkah pertama adalah dengan langsung membuka stream paling awal sehingga ditemukan nama pelaku
+- Bruteforce dan cari stream 207 untuk menemukan kredensial yang dibutuhkan
+![image](https://github.com/user-attachments/assets/fce48d4b-4f81-4107-ba0f-becd206edaae)
+
+
+### Malicious Code
+- Langkah pertama dengan melakukan filter http contains "GET" dan tulis jumlah displayed nya
+- lakukan filterisasi "jarkom" karena pada soal sebelumnya telah ditemukan
+![image](https://github.com/user-attachments/assets/7014f39d-5fca-45f4-b635-802c5d0abcd8
+- Lakukan filterisasi frame contains "gmail.com"
+![image](https://github.com/user-attachments/assets/8789fe87-a79c-4756-acbc-54f5042fa9b8)
+kurangi jumlah displayed dengan 10 (karena 10 dari bawah sukses)
+- Bruteforce ke stream 221, kemudian search ASCII translator untuk diartikan menggunakan web dcode.fr
+- Kenali MAS AJI.
+![image](https://github.com/user-attachments/assets/fd823458-1fd4-4170-b08f-18eaad46de9a)
+
+### InneRCE
+- Temukan idzoyyshell.php pada stream 27 kemudian jamnya ditambah 7
+- Bruteforce hingga stream 55 (menemukan server-app)
+- idzoyyshell.php
+- Ada pada stream 49 bakuls, perhatikan line whoami paling atas
+- Bruteforce hingga stream 52 terus copas line %20(bagian yang harus dicopas)%20 dan decode dengan base 64
+- ![image](https://github.com/user-attachments/assets/ba8f190c-2f43-42f2-85e4-a7b1ac8738e4)
+- Done
+![image](https://github.com/user-attachments/assets/27d07fcf-66c8-448e-b46e-4bed01a975a4)
+
+### 22 Nightmare
+- Cari tcp stream dan temukan langsung Sh1k4.jpg
+- Export file dengan cara sebelumnya
+- Lakukan extract
+- ![image](https://github.com/user-attachments/assets/8a83d4e6-8a3a-49a7-8c1e-9df65d947387)
+- filter dengan frame contains "noko.py" (karena sempat terlihat pada saat download)
+- Buka file py, copas binernya, masukkan ke decryptor pakai kunci biner NUN yang diubah ke biner, dan langsung decrypt ke text
+![image](https://github.com/user-attachments/assets/6ab98660-0d1f-40d3-9bb5-ad35c7328a09)
+

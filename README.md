@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/ca51f12d-5f85-4779-b43d-649fd3c9642f)# WRITE UP PRAKTIKUM MODUL 01 ETHICAL HACKING
+# WRITE UP PRAKTIKUM MODUL 01 ETHICAL HACKING
 ## Kelompok IT40
 ### Anggota Kelompok :
 |             Nama              |     NRP    |
@@ -75,7 +75,8 @@ Setelah itu didapatkan flagnya, yaitu JarkomIT{l1ttl3_m0us3_1n_th3_h0us3_IhONCrq
 
 ### Rizzset
 
+Kita masuk sesuai port yang disediakan pada question section, dan muncul pada terminal ditanya nama domain. Saat pertama kali membuka wireshark, mata saya langsung ditujukan pada domain www.its.ac.id. Saya coba masukkan dan ternyata benar. Lalu kita ditanya port IP dari domain tersebut. Awalnya saya juga gatau, jadi saya saya coba satu satu aja port IP nya yang tertampil mulai dari 172.24.141.242 karena paling banyak dan lainnya. Sampai akhirnya benar pada port 103.94.189.5.
+![image](https://github.com/user-attachments/assets/8fcd809d-b41f-45e5-b4cb-45bdcaf2d006)
+![image](https://github.com/user-attachments/assets/7440fa56-64b2-4b45-88b6-330ff898c484)
 
-
-
-
+Lalu pada terminal ditanya apa JARM Fingerprint yang dihasilkan domain. Awaknya saya juga gatau maksudnya apa, terus saya coba cari di google cara cari JARM, lalu diarahkan buat clone suatu repo dan membuka salah satu file.py nya.

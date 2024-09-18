@@ -79,4 +79,21 @@ Kita masuk sesuai port yang disediakan pada question section, dan muncul pada te
 ![image](https://github.com/user-attachments/assets/8fcd809d-b41f-45e5-b4cb-45bdcaf2d006)
 ![image](https://github.com/user-attachments/assets/7440fa56-64b2-4b45-88b6-330ff898c484)
 
-Lalu pada terminal ditanya apa JARM Fingerprint yang dihasilkan domain. Awaknya saya juga gatau maksudnya apa, terus saya coba cari di google cara cari JARM, lalu diarahkan buat clone suatu repo dan membuka salah satu file.py nya.
+Lalu pada terminal ditanya apa JARM Fingerprint yang dihasilkan domain. Awalnya saya juga gatau maksudnya apa, terus saya coba cari di google cara cari JARM, lalu diarahkan buat clone suatu repo dan membuka salah satu file.py nya. Disana saya mencoba mengikuti langkah-langkah nya, hingga akhirnya menemukan JARM nya, yaitu 2ad2ad16d2ad2ad22c2ad2ad2ad2ad74aaecca9f9c4a3303863dfee62b241e
+![image](https://github.com/user-attachments/assets/868a8979-72c8-4ba1-b0e9-f2d8b38032bc)
+
+Setelah itu tertampil flag nya, yaitu JarkomIT{Dn5_C0rR34t10n_aj8nQT92JcBYHlDYNRV5huoU7r1zZ0lpUdILyAtZ1yeF3f4A3giU7C1T5}
+![image](https://github.com/user-attachments/assets/be33bf23-5fbe-4078-ae31-5eaefad7c468)
+
+### Gajah Terbang (Server Recon)
+
+Setelah masuk pada port IP yang tersedia, pada terminal muncul DBMS apa yang digunakan pada server. Awalnya saya gatau harus masukin apa, cuman setelah dilihat-lihat lagi ada yang namanya PGSQL itu dan dia ada banyak banget. Setelah saya coba cari ternyata dia juga merupakan salah satu jenis DBMS seperti MySQL, MariaDB, dan lainnya. Tetapi saat saya mengetik PGSQL, dia ternyata salah. Saat saya coba iseng masukkan PostgreSQL, yang mana merupakan kepanjangan dari PGSQL, ternyata benar. Lalu kita disuruh untuk memasukkan port nya PGSQL itu, disini saya juga coba satu-satu mulai dari 5432 dan lainnya, hingga akhirnya benar di port 6969. Setelah itu kita diminta untuk memasukkan OS apa yang digunakan pada server tersebut, saat iseng-iseng coba mencari sebelumnya, saya menemukan ada sebuah kata yaitu Debian dimana dia sangat sering sekali muncul di UDP. Setelah 1st try saya coba masukkan, ternyata benar. Setelahnya, kita disuruh untuk memasukkan credentials username DBMS valid yang digunakan. Saya juga awalnya gapaham kredensial yang bagaimana, tapi setelahnya saya coba-coba semua yang ada pada packets yang memuat info-info user, saya menemukan jawabannya di "s1gm4". Setelah itu saat selanjutnya disuruh memasukkan nama databasenya, juga berawal dari coba-coba hingga akhirnya benar pada "sigmaskibidigyatrizzzz. Saat ditanya berikutnya nama user, saya menjawab"4" karena disana tertampil 4 nama info user dari jojo, kevin, siska, kunto aji. Saat ditanya email admin, pada packets tertera informasi admin adalah jojo, jadi saya masukkan email jojo. Dan saat diminta password, saya menhashing code dari jojo selaku admin, karena waktu di decode gabisa dan format maunya string. 
+![image](https://github.com/user-attachments/assets/1a00b129-00ad-4437-a27f-d24ca39892ea)
+![image](https://github.com/user-attachments/assets/a384657e-f03f-47ce-8cba-ee1b606b1ab7)
+![image](https://github.com/user-attachments/assets/5b3cf790-3ac8-4684-a53d-b272f0798126)
+![image](https://github.com/user-attachments/assets/5d5cd229-754c-437a-8a42-5a537294c775)
+
+Dan munculah flag, yaitu JarkomIT{Gy4tT_M5g_4U_LBuvgaosrMezITmL5dAvR8L535k1woCEvE2mc05OfNGbB8nANxCKsBiD1}
+![image](https://github.com/user-attachments/assets/513130d1-673c-4bce-b91f-d3e2361ecf11)
+
+### 

@@ -54,7 +54,7 @@ Pada terminal kita ditanya usn yang berhasil digunakan ftp login, setelah kita a
 Setelah itu kita telah mendapatkan flag nya, yaitu JarkomIT{n0t_s0_s3cur3_ftp_OCPBE5WVpOGa7l4nQFeYfJ1nNL0nyFHu9cZmu59LKXaYnGhny8d9G1N}
 ![image](https://github.com/user-attachments/assets/8bc93abd-93d1-40a4-88f4-4e2a76466f4e)
 
-###EZ
+### EZ
 
 Pertama kita masuk ke IP yang telah tersedia pada soal, lalu pada terminal kita diminta untuk memasukkan jawaban dari log tersebut. Awalnya saya gapaham itu maksudnya apa, lalu saya iseng buat anaylze > follow > tcp di packets paling pertama sendiri, karena coba-coba siapa tahu dapet hint, dan akhirnya ternyata dapet. Disitu ada kata yang lumayan sus tulisannya "jawabannya jawaban", saya iseng masukin ternyata bener. Lalu kita ditanyain itu ada di port berapa, bisa kita cek di bagian left bottom section, disana tertera port nya yaitu "1234"
 ![image](https://github.com/user-attachments/assets/51d9dc45-b66c-4de5-a085-1f950397b722)
@@ -65,6 +65,15 @@ Setelah itu munculah flag nya, yaitu JarkomIT{BiAr_aman_Pake_sSh_OQxo9eKh1mEbBEy
 
 ### Surprise
 
+Pertama kita masuk pada port nc yang disediakan, dan file nya menggunakan file yang sama seperti FTP Login. Setelah itu pada terminal muncul kita disuruh masuk ke servie yang digunakan pada FTP. Langkah awal tadi saya mencoba masuk ke packets yang sama seperti pada soal FTP Login sebelumnya. Setelah saya cari line ke-1 sepeti mempunyai format yang sama dengan yang diminta, saya coba masukkan dan ternyata benar. Lalu kita diminta untuk mengirim nama file yang dikirim oleh attacker. Saya coba cari masih di tempat yang sama, dan menemukan suatu kata dengan format. Saya coba masukkan dan ternyata berhasil. Setelah itu kita disuruh mencari pesan rahasia dari attacker. Saya mulai scroll dari atas hingga bawah dan menemukan suatu packets dengan status info yang sama dengan nama file yang tadi dimasukkan. Setelah saya lihat ada seperti code bahasa c++ lalu coba saya masukkan ke compiler, dan hasilnya ditemukan sesuatu. Lalu hal itu saya masukkan pada terminal dan ternyata benar.
+![image](https://github.com/user-attachments/assets/b99a584a-e629-4a45-bd9c-862ebd1e6d46)
+![image](https://github.com/user-attachments/assets/aca397fc-4255-4baf-a850-df580a6b3478)
+![image](https://github.com/user-attachments/assets/3e593890-79d7-4400-80d5-5d8a4dbd3374)
+
+Setelah itu didapatkan flagnya, yaitu JarkomIT{l1ttl3_m0us3_1n_th3_h0us3_IhONCrqxbE6Ke7OVwi5xojhDwG0Pm5i0iNeTFrW6UP5HhVEqGF9tTCHU}
+![image](https://github.com/user-attachments/assets/7794a84a-2cef-418a-ab05-e2f121c097a4)
+
+### Rizzset
 
 
 

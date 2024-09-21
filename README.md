@@ -118,7 +118,7 @@ Flag ditemukan!
 ![image](https://github.com/user-attachments/assets/bf21d273-1889-48df-83e6-145265f7efac)
 
 
-###Packets Barrage
+### Packets Barrage
 - Langsung ditemukan dengan memasukkan ip address yang ada pada source wireshark paling atas
 - Menggunakan filter "http contains "404"" untuk menemukan fail nya berapa kemudian ditambah 1 untuk bagian suksesnya (somehow it works)
 ![image](https://github.com/user-attachments/assets/42392916-4809-4bed-97e6-3382338f187c)

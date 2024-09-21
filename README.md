@@ -167,6 +167,114 @@ kurangi jumlah displayed dengan 10 (karena 10 dari bawah sukses)
 
 
 ### Stegography
-- filter dengan frame contains ".png"
+- Packets no. 10 mengindikasikan adanya sebuah file PNG yang dikirimkan
+- Lakukan extract objects based on FTP-DATA, disana akan terdapat banyak sekali .png yang tersedia, lakukan save all dan simpan pada 1 folder khusus images untuk memudahkan step selanjutnya
+- Lakukan modifikasi pada reverse.py untuk menemukan pesan yang ada
+```
+import os
+
+from glob import glob
+
+from PIL import Image
+
+
+
+def decode_image_reversed(image_path):
+
+    img = Image.open(image_path)
+
+    img = img.convert("RGB")
+
+    pixels = img.load()
+
+
+
+    binary_message = ""
+
+    for i in range(img.width):
+
+        for j in range(img.height):
+
+            r, g, b = pixels[i, j]
+
+            r_bin = format(r, '08b')
+
+            binary_message += r_bin[-1]
+
+
+
+    message = ""
+
+    for i in range(0, len(binary_message), 8):
+
+        byte = binary_message[i:i + 8]
+
+        char = chr(int(byte, 2))
+
+        
+
+        if message.endswith("EOF"):
+
+            break
+
+        message += char
+
+
+
+    message = message.replace("EOF", "")
+
+    reversed_message = message[::-1]
+
+    return reversed_message
+
+
+
+folder_path = "/home/azrael/Downloads/14/images/"
+
+
+
+png_files = glob(os.path.join(folder_path, "*.png"))
+
+
+
+for png_file in png_files:
+
+    decoded_message_reversed = decode_image_reversed(png_file)
+
+    print(f"Pesan terbalik yang diambil dari {os.path.basename(png_file)}: {decoded_message_reversed}")
+```
 - Eksekusi dengan reverse.py dan ditemukan message "pahlawan keamanan siber" namun terbalik
+![image](https://github.com/user-attachments/assets/477572de-3616-4b07-9cea-c3c1b394eef3)
+
 ![image](https://github.com/user-attachments/assets/c76a1f04-bf7f-472a-9388-6e4cf59b156d)
+
+
+## Baby Hengker
+- Langkah pertama buka streams yang berisi ```GET DESCRIPTOR``` untuk menemukan Arrival Time dari input pertama kali
+![image](https://github.com/user-attachments/assets/14f0febc-a07f-4417-a184-dc64123788e9)
+- Karena fokus kita adalah pada keystrok maka lakukan filter pada wireshark. Disini menggunakan filter
+```((usb.transfer_type == 0x01) && (frame.len == 35))```
+- Penggunaan length 35 dikarenakan terdapat informasi HID DATA pada setiap streams yang memiliki length 35
+- Setelah lakukan filter, lakukan export packages tersebut kedalam file .csv
+- Setelahnya gunakan command
+```
+cat innerchild.csv | cut -d "," -f 7 | cut -d '"' -f 2 | grep -vE "Leftover Capture Data" > innerchildhex.txt
+```
+untuk melakukan 
+
+### Adult Hengker
+- Langkah pertama mirip dengan soal Baby Hengker yakni dengan membuka file pcap dan buka pada line paling atas. Kemudian pada device descriptor akan terungkap jenis device apa yang tersambung pada USB
+![image](https://github.com/user-attachments/assets/6b05b870-5018-469d-a3c9-649cc23496c1)
+- Kemudian mungkin terjadi kesalahan pada soal sehingga format jawaban yang diminta soal berbeda dengan maksud soal itu sendiri. Namun dari format jawaban yang diminta yakni 
+```
+Apakah device yang digunakan oleh seorang mahasiswa tersebut?
+Format: STRING .ex AKU INGIN JADI SEORANG BATMAN
+```
+Dapat disimpulkan bahwa yang diminta adalah apa yang dilakukan oleh mouse tersebut
+- Menggunakan bantuan USBPcap Mouse Visualizer yang ada pada GitHub seseorang, kita dapat memvisualisasikan input mouse tersebut sehingga muncul pesan
+![image](https://github.com/user-attachments/assets/4b82f3fa-3f2b-4ab0-b91e-553f80f3a85e)
+```
+HALO MAS KEVIN SALKEN
+```
+- Dan Flag telah ditemukan!
+![image](https://github.com/user-attachments/assets/530605ab-8fce-4e8d-b53a-60c7e4a8c298)

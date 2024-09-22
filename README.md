@@ -1,4 +1,4 @@
-# WRITE UP PRAKTIKUM MODUL 01 ETHICAL HACKING
+# WRITE UP PRAKTIKUM MODUL 01 KOMUNIKASI DATA DAN JARINGAN KOMPUTER
 ## Kelompok IT40
 ### Anggota Kelompok :
 |             Nama              |     NRP    |
@@ -289,3 +289,88 @@ Pertama kita masukkan port IP yang ada pada soal di terminal, dan mendownload fi
 
 Setelah itu tertampil hasil flag pada soal ini, yaitu JarkomIT{4PaK4h_M3nD1nG_p4K3_SFTP_qraXu2kUiSO1OMCxL8qtb6CA1AaXyif0BaygBwb5vNWn9dCWE6KgSMB}
 ![image](https://github.com/user-attachments/assets/c752f53c-5c98-497f-abe6-d2f7c405dfd0)
+
+# Encrypted World
+- Langkah oertama dapat dengan melakukan save pada file yang ada pada pcap dengan melakukan export objects via FTP-DATA
+![image](https://github.com/user-attachments/assets/b5c13e43-0170-4607-abda-08019d63ab4f)
+- Setelahnya lakukan decrypt AES yang ada pada AES.txt menggunakan hint yang ada pada pcap. Berdasarkan hint tersebut dapat diambil setiap huruf yang ada didepan setiap kata. Sehingga muncul key dan IV untuk AES nya
+- Key
+```
+aof9ai78939riahofhfiasfiayaiapsg
+```
+- IV
+```
+kbalfahwrsiabisg
+```
+- Ketika keduanya dimasukkan akan memunculkan password untuk c1pher.rar yakni `jarkomasik`
+- setelahnya akan muncul 3 folder berbeda dan  masing-masing akan memiliki 10 file txt. Hint nya terdapat pada soal yakni pada bagian DES, AES, dan Base64
+- Ketika menggunakan AI untuk menemukan enkripsinya, terlihat bahwa enkripsinya berupa Base64. Oleh karena itu maka diformulasikanlah sebuah python script untuk memecahkannya
+```
+import os
+import base64
+
+# Set the base directory where the folders are located
+base_directory = '/home/azrael/Documents/chall13'
+
+def correct_base64_padding(data):
+    # Pad the Base64 string with '=' if necessary
+    missing_padding = len(data) % 4
+    if missing_padding:
+        data += '=' * (4 - missing_padding)
+    return data
+
+def decode_base64(data):
+    try:
+        data = correct_base64_padding(data)
+        decoded_data = base64.b64decode(data).decode('utf-8')
+        return decoded_data
+    except UnicodeDecodeError as ue:
+        return f"Non-UTF-8 data or invalid Base64 content detected: {ue}"
+    except Exception as e:
+        return f"Base64 decoding failed: {e}"
+
+def decode_file(file_path):
+    try:
+        with open(file_path, 'r') as f:
+            file_content = f.read().strip()
+
+            # Attempt base64 decoding with corrected padding
+            decoded = decode_base64(file_content)
+            return f"Decoded (Base64): {decoded}\n"
+    except Exception as e:
+        return f"Error processing {file_path}: {e}\n"
+
+def process_all_files_in_folders(base_directory):
+    # List of folders to process
+    folders = ["UGVydGFueWFhbiAx", "UGVydGFueWFhbiAy", "UGVydGFueWFhbiAz"]
+
+    for folder in folders:
+        folder_path = os.path.join(base_directory, folder)
+        print(f"\nProcessing folder: {folder}\n")
+        
+        for filename in sorted(os.listdir(folder_path)):
+            if filename.endswith('.txt'):
+                file_path = os.path.join(folder_path, filename)
+                print(f"{filename} = ", end="")
+                result = decode_file(file_path)
+                print(result)
+
+# Start processing all files in all folders
+process_all_files_in_folders(base_directory)
+```
+- Hasil dari code tersebut sebagai berikut
+![image](https://github.com/user-attachments/assets/21ffabf5-61f1-49d2-95ad-08e9858d9fc9)
+- Berdasarkan berbagai clue tersebut maka jawab pertanyaannya dan flag akan ditemukan.
+![image](https://github.com/user-attachments/assets/2bd0fb2f-69ab-45c5-9fab-3902dd71948e)
+
+# Netware
+- Terlihat bahwa file pcap memiliki protocol TLS. Pada file soal ketika diextract terdapat 2 file yang berisi .txt dan .pcap
+- Masuk ke bagian edit -> preferences -> pilih protocol TLS
+- Kemudian masukkan txt tadi pada (Pre)-Master-Secret log filename
+![image](https://github.com/user-attachments/assets/e15dce33-ff5f-4f82-8c2a-3b93fb604b67)
+- Setelahnya terlihat bahwa terdapat beberapa protocol HTTP. Dari situ karena yang diminta soal ialah filename dan extension maka bisa melakukan export objects based on HTTP (invest_20.dll merupakan file yang diminta)
+- Kemudian diminta untuk menemukan SHA-256 hash sehingga dapat gunakan command berikut untuk mengetahuinya
+![image](https://github.com/user-attachments/assets/4beb5ea4-c272-42de-a366-9792f0d89f7d)
+- And the practicum is Done!
+![image](https://github.com/user-attachments/assets/b8cf0365-1702-442c-bfb0-81b31b9f7ec2)
+(playing Love In The Dark - Adele)

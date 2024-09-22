@@ -279,3 +279,13 @@ HALO MAS KEVIN SALKEN
 ```
 - Dan Flag telah ditemukan!
 ![image](https://github.com/user-attachments/assets/530605ab-8fce-4e8d-b53a-60c7e4a8c298)
+
+# Simba
+
+Pertama kita masukkan port IP yang ada pada soal di terminal, dan mendownload file yang ada. Pada soal pertama kita disuruh untuk mencari service apakah yang compromise? Langkah yang saya lakukan adalah dengan mengecek lewat section protocol yang ada. Setelah mencoba beberapa service seperti TCP, MDNS, dan ARP, jawaban yang benar adalah pada "SMB", karena termasuk yang paling banyak juga. Setelah itu kita disuruh untuk menyebutkan user yang compromise. Pada soal ini, saya mulai memfilter service untuk tertuju pada SMB, setelah itu saya scroll satu-satu packets yang ada hingga menemukan "mmeyers". Soal terakhir kita ditanya ada berapa file yang berhasil ter-leak dari hasil enumerasi protokol/service tersebut. Setelah mencoba banyak angka, kami menggunakan langkah Export Objects > SMB > menghitung banyaknya file yang tertampil, tetapi dengan mengesampingkan yang memiliki size 0 bytes. Dan hasilnya adalah 14
+![image](https://github.com/user-attachments/assets/59081d9e-6751-4e15-8426-df082676e2a7)
+![WhatsApp Image 2024-09-22 at 20 14 50_b33c34a7](https://github.com/user-attachments/assets/b4839745-853e-43da-8f69-b43462fb51ad)
+![image](https://github.com/user-attachments/assets/00b36a94-ea87-436d-88f0-a9a26a859231)
+
+Setelah itu tertampil hasil flag pada soal ini, yaitu JarkomIT{4PaK4h_M3nD1nG_p4K3_SFTP_qraXu2kUiSO1OMCxL8qtb6CA1AaXyif0BaygBwb5vNWn9dCWE6KgSMB}
+![image](https://github.com/user-attachments/assets/c752f53c-5c98-497f-abe6-d2f7c405dfd0)

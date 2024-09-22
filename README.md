@@ -6,7 +6,7 @@
 | Revalina Fairuzy Azhari Putri | 5027231001 |
 | Kevin Anugerah Faza           | 5027231027 |
 
-### Advance Sanity Check
+# Advance Sanity Check
 Langkah pertama yaitu mendownload sanity.pcapng pada web dan masuk ke dalam IP yang tersedia pada question box section
 ![WhatsApp Image 2024-09-18 at 23 33 59_05e0f750](https://github.com/user-attachments/assets/e780e4f7-070e-4185-93a8-33b4e2e72907)
 
@@ -30,7 +30,7 @@ Setelah dimasukkan, muncul flagnya
 
 flagnya adalah, JarkomIT{8uK4n_S4n1ty_b1a5A_cEuEzhKl6Gjd9qxpQizw3AAEOSu5PujqyAsJVJbnudESvOEhPp4mXIKK}
 
-### Pegawai Negeri Sebelah
+# Pegawai Negeri Sebelah
 Kita masuk ke nc yang telah diberikan, dan diberikan pertanya tentang siapa yang memiliki password "nNnM%coQuF"
 Metode mencari saya menggunakan fitur filter yang ada, dengan melihat protokol terbanyak pada packets yang ada, yang paling banyak adalah protokol TCP. Sehingga saya mencoba filter "tcp.stream eq" dengan angka dari 0 - 5 (sesuai yang tersediah pada references search bar nya) dan menemukan data para pns nya pada pengaturan filter tcp.stream eq 1. Setelah itu saya scroll di tiap packetsnya hingga menemukan orang yang memiliki password tersebut. Dan orang tersebut adalah Vero Tampubolon
 ![image](https://github.com/user-attachments/assets/811d9816-56c0-4a9d-976c-adaa59b2f963)
@@ -43,7 +43,7 @@ Lalu kita diminta untuk memasukkan jabatan dari Taufan Kuswandari, dari data yan
 Setelah kita masukkan semua, flag telah ditemukan yaitu "flag-mu: JarkomIT{Tum8eN_p45SnYa_Ku4t_B1aS4Nya_kimJpa34YhWNGeYZnikzQzuapL3lFfJXYuOEhf65YYjDOcWAFQo8M4h}"
 ![image](https://github.com/user-attachments/assets/5e7d8cc5-68ce-4518-8825-b564d016de2f)
 
-### FTP Login
+# FTP Login
 
 Pertama kita masuk pada port nc yang telah disediakan. Lalu saat membuka file di wireshark, terlihat mayoritas packets dengan info tentang login ada di FTP, pada search langsung saja kita tulis ftp untuk memfilter, lalu kita pilih packets yang info nya login succesfull
 ![image](https://github.com/user-attachments/assets/26ddd5b0-66b7-44b8-bf9a-cf3473f8fffb)
@@ -54,7 +54,7 @@ Pada terminal kita ditanya usn yang berhasil digunakan ftp login, setelah kita a
 Setelah itu kita telah mendapatkan flag nya, yaitu JarkomIT{n0t_s0_s3cur3_ftp_OCPBE5WVpOGa7l4nQFeYfJ1nNL0nyFHu9cZmu59LKXaYnGhny8d9G1N}
 ![image](https://github.com/user-attachments/assets/8bc93abd-93d1-40a4-88f4-4e2a76466f4e)
 
-### EZ
+# EZ
 
 Pertama kita masuk ke IP yang telah tersedia pada soal, lalu pada terminal kita diminta untuk memasukkan jawaban dari log tersebut. Awalnya saya gapaham itu maksudnya apa, lalu saya iseng buat anaylze > follow > tcp di packets paling pertama sendiri, karena coba-coba siapa tahu dapet hint, dan akhirnya ternyata dapet. Disitu ada kata yang lumayan sus tulisannya "jawabannya jawaban", saya iseng masukin ternyata bener. Lalu kita ditanyain itu ada di port berapa, bisa kita cek di bagian left bottom section, disana tertera port nya yaitu "1234"
 ![image](https://github.com/user-attachments/assets/51d9dc45-b66c-4de5-a085-1f950397b722)
@@ -63,7 +63,7 @@ Pertama kita masuk ke IP yang telah tersedia pada soal, lalu pada terminal kita 
 Setelah itu munculah flag nya, yaitu JarkomIT{BiAr_aman_Pake_sSh_OQxo9eKh1mEbBEy0lgBnVj5mM3zST4VbIhRbt6fi2zrXqEYwlFkiEZ}
 ![image](https://github.com/user-attachments/assets/cf00bd05-6e1e-4ed8-837f-0bf12f93a53b)
 
-### Surprise
+# Surprise
 
 Pertama kita masuk pada port nc yang disediakan, dan file nya menggunakan file yang sama seperti FTP Login. Setelah itu pada terminal muncul kita disuruh masuk ke servie yang digunakan pada FTP. Langkah awal tadi saya mencoba masuk ke packets yang sama seperti pada soal FTP Login sebelumnya. Setelah saya cari line ke-1 sepeti mempunyai format yang sama dengan yang diminta, saya coba masukkan dan ternyata benar. Lalu kita diminta untuk mengirim nama file yang dikirim oleh attacker. Saya coba cari masih di tempat yang sama, dan menemukan suatu kata dengan format. Saya coba masukkan dan ternyata berhasil. Setelah itu kita disuruh mencari pesan rahasia dari attacker. Saya mulai scroll dari atas hingga bawah dan menemukan suatu packets dengan status info yang sama dengan nama file yang tadi dimasukkan. Setelah saya lihat ada seperti code bahasa c++ lalu coba saya masukkan ke compiler, dan hasilnya ditemukan sesuatu. Lalu hal itu saya masukkan pada terminal dan ternyata benar.
 ![image](https://github.com/user-attachments/assets/b99a584a-e629-4a45-bd9c-862ebd1e6d46)
@@ -73,7 +73,7 @@ Pertama kita masuk pada port nc yang disediakan, dan file nya menggunakan file y
 Setelah itu didapatkan flagnya, yaitu JarkomIT{l1ttl3_m0us3_1n_th3_h0us3_IhONCrqxbE6Ke7OVwi5xojhDwG0Pm5i0iNeTFrW6UP5HhVEqGF9tTCHU}
 ![image](https://github.com/user-attachments/assets/7794a84a-2cef-418a-ab05-e2f121c097a4)
 
-### Rizzset
+# Rizzset
 
 Kita masuk sesuai port yang disediakan pada question section, dan muncul pada terminal ditanya nama domain. Saat pertama kali membuka wireshark, mata saya langsung ditujukan pada domain www.its.ac.id. Saya coba masukkan dan ternyata benar. Lalu kita ditanya port IP dari domain tersebut. Awalnya saya juga gatau, jadi saya saya coba satu satu aja port IP nya yang tertampil mulai dari 172.24.141.242 karena paling banyak dan lainnya. Sampai akhirnya benar pada port 103.94.189.5.
 ![image](https://github.com/user-attachments/assets/8fcd809d-b41f-45e5-b4cb-45bdcaf2d006)
@@ -85,7 +85,7 @@ Lalu pada terminal ditanya apa JARM Fingerprint yang dihasilkan domain. Awalnya 
 Setelah itu tertampil flag nya, yaitu JarkomIT{Dn5_C0rR34t10n_aj8nQT92JcBYHlDYNRV5huoU7r1zZ0lpUdILyAtZ1yeF3f4A3giU7C1T5}
 ![image](https://github.com/user-attachments/assets/be33bf23-5fbe-4078-ae31-5eaefad7c468)
 
-### Gajah Terbang (Server Recon)
+# Gajah Terbang (Server Recon)
 
 Setelah masuk pada port IP yang tersedia, pada terminal muncul DBMS apa yang digunakan pada server. Awalnya saya gatau harus masukin apa, cuman setelah dilihat-lihat lagi ada yang namanya PGSQL itu dan dia ada banyak banget. Setelah saya coba cari ternyata dia juga merupakan salah satu jenis DBMS seperti MySQL, MariaDB, dan lainnya. Tetapi saat saya mengetik PGSQL, dia ternyata salah. Saat saya coba iseng masukkan PostgreSQL, yang mana merupakan kepanjangan dari PGSQL, ternyata benar. Lalu kita disuruh untuk memasukkan port nya PGSQL itu, disini saya juga coba satu-satu mulai dari 5432 dan lainnya, hingga akhirnya benar di port 6969. Setelah itu kita diminta untuk memasukkan OS apa yang digunakan pada server tersebut, saat iseng-iseng coba mencari sebelumnya, saya menemukan ada sebuah kata yaitu Debian dimana dia sangat sering sekali muncul di UDP. Setelah 1st try saya coba masukkan, ternyata benar. Setelahnya, kita disuruh untuk memasukkan credentials username DBMS valid yang digunakan. Saya juga awalnya gapaham kredensial yang bagaimana, tapi setelahnya saya coba-coba semua yang ada pada packets yang memuat info-info user, saya menemukan jawabannya di "s1gm4". Setelah itu saat selanjutnya disuruh memasukkan nama databasenya, juga berawal dari coba-coba hingga akhirnya benar pada "sigmaskibidigyatrizzzz. Saat ditanya berikutnya nama user, saya menjawab"4" karena disana tertampil 4 nama info user dari jojo, kevin, siska, kunto aji. Saat ditanya email admin, pada packets tertera informasi admin adalah jojo, jadi saya masukkan email jojo. Dan saat diminta password, saya menhashing code dari jojo selaku admin, karena waktu di decode gabisa dan format maunya string. 
 ![image](https://github.com/user-attachments/assets/1a00b129-00ad-4437-a27f-d24ca39892ea)
@@ -96,7 +96,7 @@ Setelah masuk pada port IP yang tersedia, pada terminal muncul DBMS apa yang dig
 Dan munculah flag, yaitu JarkomIT{Gy4tT_M5g_4U_LBuvgaosrMezITmL5dAvR8L535k1woCEvE2mc05OfNGbB8nANxCKsBiD1}
 ![image](https://github.com/user-attachments/assets/513130d1-673c-4bce-b91f-d3e2361ecf11)
 
-### Gajah Terbang (Attacker Recon)
+# Gajah Terbang (Attacker Recon)
 
 Setelah memasukkan port IP nc sesuai yang ada pada soal, dan menggunakan file yang sama seperti soal Gajah Terbang yang lalu, kita mendapat pertanyaan di terminal tentang email akun penyerang. Awalnya saya gatau mana yang attacker, lalu saya coba satu-satu dan berhasil di kunto aji. Lalu untuk password penyerangnya saya juga meng-hashing password kunto seperti pada step soal sebelumnya dan menemukan passwordnya adalah "kissme". Lalu ditanya tanggal banned, dan saya memasukkan 2024-06-09 dari info. Lalu ditanyakan tabel apa yang telah diubah penyerang, dan dari info yang didapat yang diubah adalah users dan banned_users. Setelah itu ditanyakan barang apa yang telah dibeli, saya coba langsung 1st try di rokok dan es krim akhirnya berhasil. Lalu ditanyakan total transaksi, saya menjumlahkan harga dari rokok dan es krim pada info data, dan didapat hasilnya adalah 18.000 + 6.500 yaitu 24.500 dan hasilnya benar. 
 
@@ -105,7 +105,7 @@ Setelah memasukkan port IP nc sesuai yang ada pada soal, dan menggunakan file ya
 Lalu muncullah flag nya yaitu JarkomIT{G4jaH_K0k_t3RbaNG_0DA7g5WyN4KciJaUVVo0ZN2DPYntwWJAyLDA4hWx3F5XVOReTg5FZKt5}
 ![image](https://github.com/user-attachments/assets/a9c91386-a1ae-4adb-b2f7-a4e47ed1b428)
 
-### Illegal Breakthrough
+# Illegal Breakthrough
 - Langkah pertama langsung saja follow tcp stream yang paling atas sehingga ditemukan ip server nya.
 ![image](https://github.com/user-attachments/assets/d694ad4a-c11b-4275-b50d-9f48812fcabc)
 - Langkah kedua adalah dengan memperhatikan line host pada hal yang sama
@@ -118,7 +118,7 @@ Flag ditemukan!
 ![image](https://github.com/user-attachments/assets/bf21d273-1889-48df-83e6-145265f7efac)
 
 
-### Packets Barrage
+# Packets Barrage
 - Langsung ditemukan dengan memasukkan ip address yang ada pada source wireshark paling atas
 - Menggunakan filter "http contains "404"" untuk menemukan fail nya berapa kemudian ditambah 1 untuk bagian suksesnya (somehow it works)
 ![image](https://github.com/user-attachments/assets/42392916-4809-4bed-97e6-3382338f187c)
@@ -129,13 +129,13 @@ Lakukan save dan kemudian extract filenya untuk kemudian menemukan file bernama 
 ![image](https://github.com/user-attachments/assets/8b06a0c8-3eab-4c43-ab59-b3258ac941f6)
 
 
-### Corporate Breach
+# Corporate Breach
 - Langkah pertama adalah dengan langsung membuka stream paling awal sehingga ditemukan nama pelaku
 - Bruteforce dan cari stream 207 untuk menemukan kredensial yang dibutuhkan
 ![image](https://github.com/user-attachments/assets/fce48d4b-4f81-4107-ba0f-becd206edaae)
 
 
-### Malicious Code
+# Malicious Code
 - Langkah pertama dengan melakukan filter http contains "GET" dan tulis jumlah displayed nya
 - lakukan filterisasi "jarkom" karena pada soal sebelumnya telah ditemukan
 ![image](https://github.com/user-attachments/assets/7014f39d-5fca-45f4-b635-802c5d0abcd8
@@ -146,7 +146,7 @@ kurangi jumlah displayed dengan 10 (karena 10 dari bawah sukses)
 - Kenali MAS AJI.
 ![image](https://github.com/user-attachments/assets/fd823458-1fd4-4170-b08f-18eaad46de9a)
 
-### InneRCE
+# InneRCE
 - Temukan idzoyyshell.php pada stream 27 kemudian jamnya ditambah 7
 - Bruteforce hingga stream 55 (menemukan server-app)
 - idzoyyshell.php
@@ -156,7 +156,7 @@ kurangi jumlah displayed dengan 10 (karena 10 dari bawah sukses)
 - Done
 ![image](https://github.com/user-attachments/assets/27d07fcf-66c8-448e-b46e-4bed01a975a4)
 
-### 22 Nightmare
+# 22 Nightmare
 - Cari tcp stream dan temukan langsung Sh1k4.jpg
 - Export file dengan cara sebelumnya
 - Lakukan extract
@@ -166,7 +166,7 @@ kurangi jumlah displayed dengan 10 (karena 10 dari bawah sukses)
 ![image](https://github.com/user-attachments/assets/6ab98660-0d1f-40d3-9bb5-ad35c7328a09)
 
 
-### Stegography
+# Stegography
 - Packets no. 10 mengindikasikan adanya sebuah file PNG yang dikirimkan
 - Lakukan extract objects based on FTP-DATA, disana akan terdapat banyak sekali .png yang tersedia, lakukan save all dan simpan pada 1 folder khusus images untuk memudahkan step selanjutnya
 - Lakukan modifikasi pada reverse.py untuk menemukan pesan yang ada
@@ -248,8 +248,9 @@ for png_file in png_files:
 
 ![image](https://github.com/user-attachments/assets/c76a1f04-bf7f-472a-9388-6e4cf59b156d)
 
+# Revisi
 
-## Baby Hengker
+# Baby Hengker
 - Langkah pertama buka streams yang berisi ```GET DESCRIPTOR``` untuk menemukan Arrival Time dari input pertama kali
 ![image](https://github.com/user-attachments/assets/14f0febc-a07f-4417-a184-dc64123788e9)
 - Karena fokus kita adalah pada keystrok maka lakukan filter pada wireshark. Disini menggunakan filter
@@ -262,7 +263,7 @@ cat innerchild.csv | cut -d "," -f 7 | cut -d '"' -f 2 | grep -vE "Leftover Capt
 ```
 untuk melakukan 
 
-### Adult Hengker
+# Adult Hengker
 - Langkah pertama mirip dengan soal Baby Hengker yakni dengan membuka file pcap dan buka pada line paling atas. Kemudian pada device descriptor akan terungkap jenis device apa yang tersambung pada USB
 ![image](https://github.com/user-attachments/assets/6b05b870-5018-469d-a3c9-649cc23496c1)
 - Kemudian mungkin terjadi kesalahan pada soal sehingga format jawaban yang diminta soal berbeda dengan maksud soal itu sendiri. Namun dari format jawaban yang diminta yakni 
